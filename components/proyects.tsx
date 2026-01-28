@@ -20,7 +20,7 @@ interface ProjectCardProps {
     onOpen: () => void;
 }
 
-export default function Proyects({ project, onOpen }: ProjectCardProps) {
+export default function Proyects() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
     return (

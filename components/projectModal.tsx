@@ -7,8 +7,9 @@ interface ProjectModalProps {
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
     return (
-        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 ">
-            <div className="bg-[#1f1f1f] p-6 rounded-xl w-[1800px] relative text-white">
+        <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4">
+            <div className="bg-[#1f1f1f] p-6 rounded-xl w-full max-w-4xl relative text-white overflow-y-auto max-h-[90vh]">
+
 
                 <button
                     onClick={onClose}

@@ -10,7 +10,7 @@ const projects = [
         title: "QA Dashboard",
         description: "Sistema para visualizar métricas de testing, se utilizo Next, Javascript, Tailwind y la data se encuentra guardada en una base de datos PostgreSQL alojada en Neon",
         images: ["/img/p1-1.png", "/img/p1-2.png"],
-        linkGit: "https://github.com/carlosBasaez/dashboard-QA",
+        linkGit: "https://github.com/carlosBasaez/dashboard-QA-nextjs",
         linkDemo: "https://dashboardqa-nextjs.netlify.app/"
     }
 ]
@@ -25,10 +25,10 @@ export default function Proyects() {
 
     return (
         <section id="Proyects" className="pt-12">
-            <div>
+            <div className="px-4 md:px-8 max-w-6xl mx-auto">
                 <h1 className="text-white text-4xl text-center pb-4">Proyectos</h1>
+                <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 pb-6">
 
-                <div className="flex gap-3 items-center justify-center pb-6">
                     {projects.map((project) => (
                         <ProjectCard
                             key={project.id}

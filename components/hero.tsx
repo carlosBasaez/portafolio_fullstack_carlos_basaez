@@ -1,6 +1,6 @@
 export default function Hero() {
     return (
-        <div className="relative h-[400px] w-full flex items-center justify-left pl-20">
+        <div className="relative h-[400px] w-full flex items-center justify-start px-4 md:pl-20">
             <img
                 src="/img/background_banner.jpg"
                 className="absolute inset-0 w-full h-full object-cover z-0"

@@ -24,8 +24,9 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
     const prev = () =>
         setIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
     return (
-        <div className="bg-[#1f1f1f] p-4 rounded-xl w-140 h-140">
-            <div className="relative h-80 bg-[#313232] rounded-lg mb-4 flex items-center justify-center">
+        <div className="w-full max-w-sm mx-auto p-4 bg-[#313232] rounded-lg">
+
+            <div className="relative h-[200px] bg-[#313232] rounded-lg mb-2 flex items-center justify-center">
                 <img
                     src={project.images[index]}
                     alt="project"

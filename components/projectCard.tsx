@@ -1,5 +1,4 @@
-"use client"
-import { useState } from "react";
+import Image from "next/image"
 
 export interface Project {
     id: number;
@@ -7,7 +6,7 @@ export interface Project {
     description: string;
     images: string[];
     linkGit: string;
-    linkDemo: string
+    linkDemo: string;
 }
 
 interface ProjectCardProps {
@@ -16,47 +15,35 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
-    const [index, setIndex] = useState(0);
-
-    const next = () =>
-        setIndex((prev) => (prev + 1) % project.images.length);
-
-    const prev = () =>
-        setIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
     return (
-        <div className="w-full max-w-sm mx-auto p-4 bg-[#313232] rounded-lg">
-
-            <div className="relative h-[200px] bg-[#313232] rounded-lg mb-2 flex items-center justify-center">
+        <div className="flex flex-col h-full bg-[#1c1c1c] border border-white/5 rounded-[2rem] overflow-hidden hover:shadow-[0_0_40px_rgba(255,255,255,0.05)] transition-all duration-500 group">
+            {/* Imagen mucho más alta */}
+            {/* Imagen mucho más alta */}
+            <div className="relative h-80 w-full overflow-hidden">
                 <img
-                    src={project.images[index]}
-                    alt="project"
-                    className="h-full object-contain"
+                    src={project.images[0]}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
                 />
-
-                <button
-                    onClick={prev}
-                    className="absolute left-2 bg-black/50 text-white px-2 py-1 rounded"
-                >
-                    ◀
-                </button>
-
-                <button
-                    onClick={next}
-                    className="absolute right-2 bg-black/50 text-white px-2 py-1 rounded"
-                >
-                    ▶
-                </button>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1c1c1c] via-transparent to-transparent opacity-60"></div>
             </div>
 
-            <h2 className="text-white font-bold pt-4 pb-2">{project.title}</h2>
-            <p className="text-gray-400 pb-4">{project.description}</p>
-            <button
-                onClick={onOpen}
-                className="mt-2 h-8 bg-[#313232] rounded w-full text-white hover:bg-[#3d3e3e]"
-            >
-                Ver más
-            </button>
-        </div>
-    );
+            <div className="p-8 flex flex-col flex-grow">
+                <h3 className="text-3xl font-bold text-white mb-4 tracking-tight">
+                    {project.title}
+                </h3>
 
+                <p className="text-gray-400 text-lg leading-relaxed mb-8 flex-grow">
+                    {project.description}
+                </p>
+
+                <button
+                    onClick={onOpen}
+                    className="mt-auto w-full py-4 px-6 bg-gradient-to-r from-white to-gray-300 text-black font-bold rounded-2xl hover:scale-[1.02] active:scale-95 transition-all duration-200"
+                >
+                    Ver Proyecto Completo
+                </button>
+            </div>
+        </div>
+    )
 }

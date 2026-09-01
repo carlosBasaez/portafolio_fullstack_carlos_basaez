@@ -1,5 +1,6 @@
 import About from "@/components/about";
 import Contact from "@/components/contact";
+import CourseProyects from "@/components/courseProyects";
 import Experience from "@/components/experience";
 import Hero from "@/components/hero";
 import NavBar from "@/components/navBar";
@@ -14,6 +15,7 @@ export default function Home() {
       <Hero />
       <About />
       <Proyects />
+      <CourseProyects />
       <Skills />
       <Experience />
       <Contact />
